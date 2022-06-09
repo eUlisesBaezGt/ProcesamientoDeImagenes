@@ -14,7 +14,8 @@ I1 = eye(3);
 img=imread('escudo.jpg');
 [rows, columns, numChannels] = size(img);
 figure();
-imshow(img(1:ceil(rows/2),1:ceil(columns/2),1:numChannels));
+% imshow(img(1:ceil(rows/2),1:ceil(columns/2),1:numChannels)); 1/4
+imshow(img(1:ceil(rows/2),1:columns,1:numChannels)); % 1/2
 
 % Other way
 A=imread('escudo.jpg');
