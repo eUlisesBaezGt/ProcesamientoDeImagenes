@@ -17,7 +17,7 @@ figure(); imshow(TImg);
 % Scale
 SImg=imresize(img,[150,250]);
 figure(); imshow(SImg);
- 
+
 
 % Vertical Mirror
 figure(); imshow(fliplr(img));
@@ -33,3 +33,9 @@ figure(); imshow(img(1:ceil(rows/2),1:ceil(columns/2),1:3));
 figure(); imshow(img(ceil(rows/2):end,ceil(columns/2):end,1:3));
 
 % 2 practic applications
+% Las dos aplicaciones practicas pueden ser por ejemplo : Si uno trabaja en edición de fotografía, 
+% puede aplicar algunas de las transformaciones para que de esta manera la foto pueda quedar bien y poder
+% presentarla al cliente. Otra de las aplicaciones puede estar enfocada al ámbito de los médicos, por
+% ejemplo con los rayos x, se pueden aplicar algunos filtros o aplicar algunas transformaciones para poder 
+% bien la imagen, para hacerla más clara y ver si hay algo al fondo y que se pueda detectar en la imagen 
+% si el paciente esta enfermo.
