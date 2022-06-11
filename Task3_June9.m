@@ -33,7 +33,7 @@ figure(); imshow(ul);
 
 % Down Right
 % figure(); imshow(img(ceil(rows/2):end,ceil(columns/2):end,1:3));
-dr = imcrop(img, [rows/2+1, columns/2+1, rows, columns]);
+dr = imcrop(img, [rows/2, columns/2, rows, columns]);
 figure(); imshow(dr);
 
 % 2 practic applications
