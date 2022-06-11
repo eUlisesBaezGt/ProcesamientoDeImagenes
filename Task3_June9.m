@@ -27,10 +27,14 @@ figure(); imshow(flip(img));
 
 
 % Up Left
-figure(); imshow(img(1:ceil(rows/2),1:ceil(columns/2),1:3));
+% figure(); imshow(img(1:ceil(rows/2),1:ceil(columns/2),1:3));
+ul = imcrop(img, [1, 1, rows/2, columns/2]);
+figure(); imshow(ul);
 
 % Down Right
-figure(); imshow(img(ceil(rows/2):end,ceil(columns/2):end,1:3));
+% figure(); imshow(img(ceil(rows/2):end,ceil(columns/2):end,1:3));
+dr = imcrop(img, [rows/2+1, columns/2+1, rows, columns]);
+figure(); imshow(dr);
 
 % 2 practic applications
 % Las dos aplicaciones practicas pueden ser por ejemplo : Si uno trabaja en edición de fotografía, 
