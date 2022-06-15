@@ -54,7 +54,6 @@ end
 % Por ejemplo en la imagen en escala de grises, un gamma mayor oscurecía 
 % más la imagen.
 
-
 % 4) Aplica la función gamma a una imagen de color y observa el
 % resultado obtenido. ¿El efecto obtenido al aplicar gamma en
 % una imagen a color es el mismo que el obtenido en imágenes
