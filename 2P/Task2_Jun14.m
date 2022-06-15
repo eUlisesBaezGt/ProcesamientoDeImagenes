@@ -52,5 +52,6 @@ for i = 1:3
 end
 
 % Si se modifica el histograma, ya que cambia el contraste, conforme aumenta el valor de gamma
-% el histograma tiende a más valores en la zona final (+250) del histograma.
+% el histograma tiende a más valores en la zona final (+250) del histograma. Y conforme
+% el valor de gamma disminuye, tiende mas a la izquierda, por la iluminación.
 
