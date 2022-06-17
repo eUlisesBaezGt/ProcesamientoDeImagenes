@@ -15,6 +15,18 @@ D = zeros(size(GS));
 D((GS>150)&(GS<250))=1;
 figure(); imshow(D);
 
+% Primero nos sale nuestra imagen en estado normal, es decir sin ninguna 
+% alteración.
+
+% Después, tenemos esa misma imagen, pero ahora en tonos grises.
+
+% En tercera modificación se puede observar que nuestra imagen ahora se 
+% ve en blanco y negro. Se ve un negro muy saturado y en el centro-derecha 
+% de la imagen, se logra ver color blanco.
+
+% En la última transformación, podemos ver que la imagen esta casi negra, 
+% hay una ligera parte donde vemos blanco, pero el 85% de la imagen es negro.
+
 % 2) Elige otra imagen, la cual se perciba muy obscura o muy clara.
 % Utiliza imtool en alguna de tus imágenes y ajusta los valores de
 % contraste, de tal manera que se mejore la tonalidad de la imagen
