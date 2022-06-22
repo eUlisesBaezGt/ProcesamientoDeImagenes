@@ -22,7 +22,7 @@ speckleNoise = imnoise(img, 'speckle');
 % 
 
 % %GAUSS
-img2 = gaussNoise;
+% img2 = gaussNoise;
 
 % % PROMEDIO
 % n=3; k=ones(n)/n.^
@@ -34,8 +34,8 @@ img2 = gaussNoise;
 % figure(); imshow(img4); title('Mediana GAUSSIAN');
 
 % % GAUSSIANO
-img5=imgaussfilt(img2,1); 
-figure(); imshow(img5); title('Gaussiano GAUSSIAN');
+% img5=imgaussfilt(img2,1); 
+% figure(); imshow(img5); title('Gaussiano GAUSSIAN');
 
 % %%
 
@@ -58,7 +58,7 @@ figure(); imshow(img5); title('Gaussiano GAUSSIAN');
 % %%
 
 % % SALT & PEPPER
-% img2 = spNoise;
+img2 = spNoise;
 
 % % PROMEDIO
 % n=3; k=ones(n)/n.^2;
@@ -70,8 +70,8 @@ figure(); imshow(img5); title('Gaussiano GAUSSIAN');
 % figure(); imshow(img4); title('Mediana Salt & pepper');
 
 % % GAUSSIANO
-% img5=imgaussfilt(img2,1);
-% figure(); imshow(img5); title('Gaussiano Salt & pepper');
+img5=imgaussfilt(img2,1);
+figure(); imshow(img5); title('Gaussiano Salt & pepper');
 % %%
 
 % % SPECLE
