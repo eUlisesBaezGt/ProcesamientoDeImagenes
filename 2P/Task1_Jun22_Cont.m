@@ -2,7 +2,7 @@ close all; clc; clear;
 % Elige 1 imagen y aplica los 4 tipos de ruido abordados
 
 img = rgb2gray(imread("up.png"));
-figure(); imshow(img); title("Imagen original");
+% figure(); imshow(img); title("Imagen original");
 
 gaussNoise = imnoise(img, 'gaussian');
 % figure(); imshow(gaussNoise); title('Gaussian noise');
@@ -45,15 +45,15 @@ img2 = poissonNoise;
 % PROMEDIO
 n=3; k=ones(n)/n.^2;
 img3=imfilter(img2,k);
-figure(); imshow(img3); title('Promedio');
+figure(); imshow(img3); title('Promedio Poisson');
 
 % MEDIANA
 img4=medfilt2(img2);
-figure(); imshow(img4); title('Mediana');
+figure(); imshow(img4); title('Mediana Poisson');
 
 % GAUSSIANO
 img5=imgaussfilt(img2,9);
-figure(); imshow(img5); title('Gaussiano');
+figure(); imshow(img5); title('Gaussiano Poisson');
 
 % %%
 
