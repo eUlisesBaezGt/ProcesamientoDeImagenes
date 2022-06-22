@@ -1,4 +1,4 @@
-close all; clc; clear;
+%close all; clc; clear;
 % Elige 1 imagen y aplica los 4 tipos de ruido abordados
 
 img = rgb2gray(imread("up.png"));
@@ -58,7 +58,7 @@ speckleNoise = imnoise(img, 'speckle');
 % %%
 
 % % SALT & PEPPER
-img2 = spNoise;
+% img2 = spNoise;
 
 % % PROMEDIO
 % n=3; k=ones(n)/n.^2;
@@ -70,12 +70,12 @@ img2 = spNoise;
 % figure(); imshow(img4); title('Mediana Salt & pepper');
 
 % % GAUSSIANO
-img5=imgaussfilt(img2,1);
-figure(); imshow(img5); title('Gaussiano Salt & pepper');
+% img5=imgaussfilt(img2,1);
+% figure(); imshow(img5); title('Gaussiano Salt & pepper');
 % %%
 
 % % SPECLE
-% img2 = speckleNoise;
+img2 = speckleNoise;
 
 % % PROMEDIO
 % n=3; k=ones(n)/n.^2;
@@ -87,6 +87,6 @@ figure(); imshow(img5); title('Gaussiano Salt & pepper');
 % figure(); imshow(img4); title('Mediana Speckle');
 
 % % GAUSSIANO
-% img5=imgaussfilt(img2,1);
-% figure(); imshow(img5); title('Gaussiano Speckle');
+img5=imgaussfilt(img2,1);
+figure(); imshow(img5); title('Gaussiano Speckle');
 
