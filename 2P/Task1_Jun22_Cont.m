@@ -1,4 +1,4 @@
-%close all; clc; clear;
+close all; clc; clear;
 % Elige 1 imagen y aplica los 4 tipos de ruido abordados
 
 img = rgb2gray(imread("up.png"));
@@ -25,7 +25,7 @@ figure(); imshow(speckleNoise); title('Speckle noise');
 img2 = gaussNoise;
 
 % PROMEDIO
-n=3; k=ones(n)/n.^
+n=3; k=ones(n)/n.^2
 img3=imfilter(img2,k);
 figure(); imshow(img3); title('Promedio GAUSSIAN');
 
