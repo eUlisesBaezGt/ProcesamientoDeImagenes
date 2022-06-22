@@ -2,7 +2,7 @@ close all; clc; clear;
 % Elige 1 imagen y aplica los 4 tipos de ruido abordados
 
 img = rgb2gray(imread("up.png"));
-% figure(); imshow(img); title("Imagen original");
+figure(); imshow(img); title("Imagen original");
 
 gaussNoise = imnoise(img, 'gaussian');
 % figure(); imshow(gaussNoise); title('Gaussian noise');
@@ -14,12 +14,12 @@ spNoise = imnoise(img, 'salt & pepper');
 % figure(); imshow(spNoise); title('Salt & pepper noise');
 
 speckleNoise = imnoise(img, 'speckle');
-figure(); imshow(speckleNoise); title('Speckle noise');
+% figure(); imshow(speckleNoise); title('Speckle noise');
 %%
 
 % 5) Aplica los filtros de mediana, promedio y gaussiano a cada una de
 % las imágenes generadas
-%% 
+% 
 
 % %GAUSS
 % img2 = gaussNoise;
@@ -34,13 +34,13 @@ figure(); imshow(speckleNoise); title('Speckle noise');
 % figure(); imshow(img4); title('Mediana GAUSSIAN');
 
 % % GAUSSIANO
-% img5=imgaussfilt(img2,9);
+% img5=imgaussfilt(img2,1);
 % figure(); imshow(img5); title('Gaussiano GAUSSIAN');
 
-%
+% %%
 
-% %POISSON
-% img2 = poissonNoise;
+%POISSON
+img2 = poissonNoise;
 
 % % PROMEDIO
 % n=3; k=ones(n)/n.^2;
@@ -51,11 +51,11 @@ figure(); imshow(speckleNoise); title('Speckle noise');
 % img4=medfilt2(img2);
 % figure(); imshow(img4); title('Mediana Poisson');
 
-% % GAUSSIANO
-% img5=imgaussfilt(img2,9);
-% figure(); imshow(img5); title('Gaussiano Poisson');
+% GAUSSIANO
+img5=imgaussfilt(img2,1);
+figure(); imshow(img5); title('Gaussiano Poisson');
 
-%%
+% %%
 
 % % SALT & PEPPER
 % img2 = spNoise;
@@ -70,24 +70,23 @@ figure(); imshow(speckleNoise); title('Speckle noise');
 % figure(); imshow(img4); title('Mediana Salt & pepper');
 
 % % GAUSSIANO
-% img5=imgaussfilt(img2,9);
+% img5=imgaussfilt(img2,1);
 % figure(); imshow(img5); title('Gaussiano Salt & pepper');
+% %%
 
-% 
+% % SPECLE
+% img2 = speckleNoise;
 
-% SPECLE
-img2 = speckleNoise;
+% % PROMEDIO
+% n=3; k=ones(n)/n.^2;
+% img3=imfilter(img2,k);
+% figure(); imshow(img3); title('Promedio Speckle');
 
-% PROMEDIO
-n=3; k=ones(n)/n.^2;
-img3=imfilter(img2,k);
-figure(); imshow(img3); title('Promedio Speckle');
+% % MEDIANA
+% img4=medfilt2(img2);
+% figure(); imshow(img4); title('Mediana Speckle');
 
-% MEDIANA
-img4=medfilt2(img2);
-figure(); imshow(img4); title('Mediana Speckle');
-
-% GAUSSIANO
-img5=imgaussfilt(img2,9);
-figure(); imshow(img5); title('Gaussiano Speckle');
+% % GAUSSIANO
+% img5=imgaussfilt(img2,1);
+% figure(); imshow(img5); title('Gaussiano Speckle');
 
