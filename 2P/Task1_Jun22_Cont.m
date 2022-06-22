@@ -8,10 +8,10 @@ gaussNoise = imnoise(img, 'gaussian');
 % figure(); imshow(gaussNoise); title('Gaussian noise');
 
 poissonNoise = imnoise(img, 'poisson');
-figure(); imshow(poissonNoise); title('Poisson noise');
+% figure(); imshow(poissonNoise); title('Poisson noise');
 
 spNoise = imnoise(img, 'salt & pepper');
-% figure(); imshow(spNoise); title('Salt & pepper noise');
+figure(); imshow(spNoise); title('Salt & pepper noise');
 
 speckleNoise = imnoise(img, 'speckle');
 % figure(); imshow(speckleNoise); title('Speckle noise');
@@ -21,23 +21,23 @@ speckleNoise = imnoise(img, 'speckle');
 % las imágenes generadas
 %% 
 
-%GAUSS
-img2 = gaussNoise;
+% %GAUSS
+% img2 = gaussNoise;
 
-% PROMEDIO
-n=3; k=ones(n)/n.^2;
-img3=imfilter(img2,k);
-figure(); imshow(img3); title('Promedio GAUSSIAN');
+% % PROMEDIO
+% n=3; k=ones(n)/n.^2;
+% img3=imfilter(img2,k);
+% figure(); imshow(img3); title('Promedio GAUSSIAN');
 
-% MEDIANA
-img4=medfilt2(img2);
-figure(); imshow(img4); title('Mediana GAUSSIAN');
+% % MEDIANA
+% img4=medfilt2(img2);
+% figure(); imshow(img4); title('Mediana GAUSSIAN');
 
-% GAUSSIANO
-img5=imgaussfilt(img2,9);
-figure(); imshow(img5); title('Gaussiano GAUSSIAN');
+% % GAUSSIANO
+% img5=imgaussfilt(img2,9);
+% figure(); imshow(img5); title('Gaussiano GAUSSIAN');
 
-%%
+%
 
 % %POISSON
 % img2 = poissonNoise;
@@ -55,23 +55,23 @@ figure(); imshow(img5); title('Gaussiano GAUSSIAN');
 % img5=imgaussfilt(img2,9);
 % figure(); imshow(img5); title('Gaussiano Poisson');
 
-% %%
+%%
 
-% % SALT & PEPPER
-% img2 = spNoise;
+% SALT & PEPPER
+img2 = spNoise;
 
-% % PROMEDIO
-% n=3; k=ones(n)/n.^2;
-% img3=imfilter(img2,k);
-% figure(); imshow(img3); title('Promedio');
+% PROMEDIO
+n=3; k=ones(n)/n.^2;
+img3=imfilter(img2,k);
+figure(); imshow(img3); title('Promedio Salt & pepper');
 
-% % MEDIANA
-% img4=medfilt2(img2);
-% figure(); imshow(img4); title('Mediana');
+% MEDIANA
+img4=medfilt2(img2);
+figure(); imshow(img4); title('Mediana Salt & pepper');
 
-% % GAUSSIANO
-% img5=imgaussfilt(img2,9);
-% figure(); imshow(img5); title('Gaussiano');
+% GAUSSIANO
+img5=imgaussfilt(img2,9);
+figure(); imshow(img5); title('Gaussiano Salt & pepper');
 
 %% 
 
