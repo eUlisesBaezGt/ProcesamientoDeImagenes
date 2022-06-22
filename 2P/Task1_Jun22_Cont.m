@@ -11,10 +11,10 @@ poissonNoise = imnoise(img, 'poisson');
 % figure(); imshow(poissonNoise); title('Poisson noise');
 
 spNoise = imnoise(img, 'salt & pepper');
-figure(); imshow(spNoise); title('Salt & pepper noise');
+% figure(); imshow(spNoise); title('Salt & pepper noise');
 
 speckleNoise = imnoise(img, 'speckle');
-% figure(); imshow(speckleNoise); title('Speckle noise');
+figure(); imshow(speckleNoise); title('Speckle noise');
 %%
 
 % 5) Aplica los filtros de mediana, promedio y gaussiano a cada una de
@@ -57,37 +57,37 @@ speckleNoise = imnoise(img, 'speckle');
 
 %%
 
-% SALT & PEPPER
-img2 = spNoise;
-
-% PROMEDIO
-n=3; k=ones(n)/n.^2;
-img3=imfilter(img2,k);
-figure(); imshow(img3); title('Promedio Salt & pepper');
-
-% MEDIANA
-img4=medfilt2(img2);
-figure(); imshow(img4); title('Mediana Salt & pepper');
-
-% GAUSSIANO
-img5=imgaussfilt(img2,9);
-figure(); imshow(img5); title('Gaussiano Salt & pepper');
-
-%% 
-
-% % SPECLE
-% img2 = speckleNoise;
+% % SALT & PEPPER
+% img2 = spNoise;
 
 % % PROMEDIO
 % n=3; k=ones(n)/n.^2;
 % img3=imfilter(img2,k);
-% figure(); imshow(img3); title('Promedio');
+% figure(); imshow(img3); title('Promedio Salt & pepper');
 
 % % MEDIANA
 % img4=medfilt2(img2);
-% figure(); imshow(img4); title('Mediana');
+% figure(); imshow(img4); title('Mediana Salt & pepper');
 
 % % GAUSSIANO
 % img5=imgaussfilt(img2,9);
-% figure(); imshow(img5); title('Gaussiano');
+% figure(); imshow(img5); title('Gaussiano Salt & pepper');
+
+% 
+
+% SPECLE
+img2 = speckleNoise;
+
+% PROMEDIO
+n=3; k=ones(n)/n.^2;
+img3=imfilter(img2,k);
+figure(); imshow(img3); title('Promedio Speckle');
+
+% MEDIANA
+img4=medfilt2(img2);
+figure(); imshow(img4); title('Mediana Speckle');
+
+% GAUSSIANO
+img5=imgaussfilt(img2,9);
+figure(); imshow(img5); title('Gaussiano Speckle');
 
