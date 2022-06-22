@@ -21,39 +21,39 @@ speckleNoise = imnoise(img, 'speckle');
 % las imágenes generadas
 %% 
 
-% %GAUSS
-% img2 = gaussNoise;
-
-% % PROMEDIO
-% n=3; k=ones(n)/n.^2;
-% img3=imfilter(img2,k);
-% figure(); imshow(img3); title('Promedio');
-
-% % MEDIANA
-% img4=medfilt2(img2);
-% figure(); imshow(img4); title('Mediana');
-
-% % GAUSSIANO
-% img5=imgaussfilt(img2,9);
-% figure(); imshow(img5); title('Gaussiano');
-
-%%
-
-%POISSON
-img2 = poissonNoise;
+%GAUSS
+img2 = gaussNoise;
 
 % PROMEDIO
 n=3; k=ones(n)/n.^2;
 img3=imfilter(img2,k);
-figure(); imshow(img3); title('Promedio Poisson');
+figure(); imshow(img3); title('Promedio GAUSSIAN');
 
 % MEDIANA
 img4=medfilt2(img2);
-figure(); imshow(img4); title('Mediana Poisson');
+figure(); imshow(img4); title('Mediana GAUSSIAN');
 
 % GAUSSIANO
 img5=imgaussfilt(img2,9);
-figure(); imshow(img5); title('Gaussiano Poisson');
+figure(); imshow(img5); title('Gaussiano GAUSSIAN');
+
+%%
+
+% %POISSON
+% img2 = poissonNoise;
+
+% % PROMEDIO
+% n=3; k=ones(n)/n.^2;
+% img3=imfilter(img2,k);
+% figure(); imshow(img3); title('Promedio Poisson');
+
+% % MEDIANA
+% img4=medfilt2(img2);
+% figure(); imshow(img4); title('Mediana Poisson');
+
+% % GAUSSIANO
+% img5=imgaussfilt(img2,9);
+% figure(); imshow(img5); title('Gaussiano Poisson');
 
 % %%
 
