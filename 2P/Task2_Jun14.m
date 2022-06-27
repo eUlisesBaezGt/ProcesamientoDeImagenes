@@ -1,27 +1,27 @@
-
+close all; clear; clc;
 % 1) Descarga 3 imagenes a color y conviértelas a escala de grises.
 
 img1 = imread('buho.png');
-figure(); imshow(img1);
-% img2 = imread('jc.png');
-% figure(); imshow(img2);
-% img3 = imread('up.png');
-% figure(); imshow(img3);
+figure(); imshow(img1); title('Buho original');
+img2 = imread('jc.png');
+figure(); imshow(img2); title('JC original');
+img3 = imread('up.png');
+figure(); imshow(img3); title('UP original');
 
 GS1 = rgb2gray(img1);
-figure(); imshow(GS1);
-% GS2 = rgb2gray(img2);
-% figure(); imshow(GS2);
-% GS3 = rgb2gray(img3);
-% figure(); imshow(GS3);
+figure(); imshow(GS1); title('Buho en escala de grises');
+GS2 = rgb2gray(img2);
+figure(); imshow(GS2); title('JC en escala de grises');
+GS3 = rgb2gray(img3);
+figure(); imshow(GS3); title('UP en escala de grises');
 
 % 2) Obten el histograma de las 3 imágenes.
 figure();
-H1 = histogram(GS1);
-% figure();
-% H2 = histogram(GS2);
-% figure();
-% H3 = histogram(GS3);
+H1 = histogram(GS1); title('Histograma de Buho');
+figure();
+H2 = histogram(GS2); title('Histograma de JC');
+figure();
+H3 = histogram(GS3); title('Histograma de UP');
 
 % 3) ¿Encontraste alguna diferencia? ¿se parecen entre sí los histogamas de tus 3 imágenes? 
 % ¿Se podría utilizar únicamente el histograma para representar a una imagen?
