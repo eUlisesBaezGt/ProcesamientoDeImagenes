@@ -1,3 +1,4 @@
+close all; clear; clc;
 
 RGB = imread('cup.png');
 SI=imresize(RGB,[450,750]);

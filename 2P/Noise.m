@@ -1,3 +1,5 @@
+close all; clear; clc;
+
 img = rgb2gray(imread("up.png"));
 
 gaussNoise = imnoise(img, 'gaussian');

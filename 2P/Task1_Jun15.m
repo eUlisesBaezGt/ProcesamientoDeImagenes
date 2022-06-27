@@ -1,3 +1,4 @@
+close all; clear; clc;
 
 % 1) Elige una imagen y aplica diferentes umbrales. ¿Qué observaste?
 % imTh = ((imGray>th1) & (imGray<th2)).
@@ -30,18 +31,18 @@ figure(); imshow(D);
 % 2) Elige otra imagen, la cual se perciba muy obscura o muy clara.
 % Utiliza imtool en alguna de tus imágenes y ajusta los valores de
 % contraste, de tal manera que se mejore la tonalidad de la imagen
-img2=imread();
-imtool(img);;
+img2=imread('rosas.png');
+imtool(img2);
 
 
 % 3) Implementa en Matlab la técnica contrast stretching con los límites
 % máximo y mínimos obtenidos en imtool.
-p=(255/218-0).*(img-0);
+p=(255/218-0).*(img2-0);
 figure(); imshow(p);
 
 % 4) Aplica equalización del histograma a alguna de tus imágenes.
-HEQ=histeq(img);
-figure(); imshow(imH);
+HEQ=histeq(img2);
+figure(); imshow(HEQ);
 
 % 5) Notas alguna diferencia entre contrast stretching y la equalización
 % del histograma
