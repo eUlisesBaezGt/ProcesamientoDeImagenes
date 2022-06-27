@@ -8,23 +8,29 @@ img = rgb2gray(imread('buho.png'));
 % 1) Obten los bordes de la imagen utilizando el operador LoG (usa la
 % función imfilter), para 2 pares diferentes de valores de sigma para
 % un solo tamaño de kernel.
-h1=fspecial('gaussian',10,5);
+h1=fspecial('gaussian',10,10);
 h2=fspecial('gaussian',10,0.5);
 hr=h1-h2;
 imgLoG=imfilter(img,hr);
-figure; imshow(imgLoG, []); title('Imagen con LoG σ1=5 σ2=0.5');
+figure; imshow(imgLoG, []); title('Imagen con LoG σ1=10 σ2=0.5');
 
-h1=fspecial('gaussian',10,10);
-h2=fspecial('gaussian',10,0.1);
-hr=h1-h2;
-imgLoG=imfilter(img,hr);
-figure; imshow(imgLoG, []); title('Imagen con LoG σ1=10 σ2=0.1');
+h11=fspecial('gaussian',10,3);
+h22=fspecial('gaussian',10,0.1);
+hr2=h11-h22;
+imgLoG=imfilter(img,hr2);
+figure; imshow(imgLoG, []); title('Imagen con LoG σ1=3 σ2=0.1');
 
 %% 2
-% 2) De acuerdo a los resultados obtenidos, ¿Cómo afecta el valor de
-% σ1 y σ2 en los bordes obtenidos?
-% Un valor de sigma mayor impacta en un mayor desenfoque, existe proporción.
-
+% 2) De acuerdo a los resultados obtenidos, ¿Cómo afecta el valor de σ1 y
+% σ2 en los bordes obtenidos? 
+% Un valor de sigma mayor impacta en un mayor
+% desenfoque, existe proporción. 
+% Lo que podemos observar en las imágenes es lo siguiente: La imagen de la 
+% derecha vemos que es ligeramente borrosa.
+% No se alcanza a ver muy claro, pero esa es a la conclusión que llegamos
+% como equipo. La imagen izquierda esta un poco mas marcada de los bordes.
+% La diferencia entre σ's es proporcional a la cantidad de bordes que se
+% obtienen.
 
 %% 3
 % 3) ¿Cómo afecta el valor del threshold en la obtención final de los
