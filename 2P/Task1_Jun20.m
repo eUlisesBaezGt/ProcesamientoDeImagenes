@@ -51,7 +51,7 @@ figure(10); imshow(uint8(filt_gauss_3)); title('Imagen filtrada con filtro gauss
 
 % 2) Eligen una imagen de alta calidad
 HQimg=rgb2gray(imread('up.png'));
-figure(11); imshow(LQimg); title('Imagen original de alta calidad');
+figure(11); imshow(HQimg); title('Imagen original de alta calidad');
 %%
 
 % 2.1) Aplica un filtro promedio con 3 tamaños diferentes de ventana.
