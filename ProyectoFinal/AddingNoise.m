@@ -20,7 +20,7 @@ function [] = AddingNoise()
         eval(strcat('img', num2str(i), ' = img;')); % Asign images to variables
 
         % Add salt and pepper noise to image
-        eval(strcat('img', num2str(i), ' = imnoise(img', num2str(i), ', ''salt & pepper'', .7);'));
+        eval(strcat('img', num2str(i), ' = imnoise(img', num2str(i), ', ''salt & pepper'', .3);'));
 
         % Add blur to image
         eval(strcat('img', num2str(i), ' = imnoise(img', num2str(i), ', ''gaussian'', 0.08);'));

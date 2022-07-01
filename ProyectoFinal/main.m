@@ -17,6 +17,7 @@ images = CleanImages(images);
 
 %% 4) OBTAIN COLOR
 % Change RGB to color and get the predominant color of the center
+GetColor(images);
 
 %% 5) OBTAIN LICENSE PLATE
 % Search for license plate in the image with OCR

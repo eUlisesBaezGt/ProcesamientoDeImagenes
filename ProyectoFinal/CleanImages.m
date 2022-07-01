@@ -8,12 +8,11 @@ function [images] = CleanImages(images)
     % Loop through the images and clean them.
     for i = 1:length(images)
         % Read the image from the Images Folder
-        image = imread(images{i}); %TODO
+        image = strcat('Images/', images{i});
+        image = imread(image);
         % Clean the image.
         image = CleanImage(image);
         % Save the image.
         imwrite(image, [folder '/' images{i}]);
-        % Add it to images the list
-        eval(strcat('images{i} = image;'));
     end
 end
