@@ -4,13 +4,13 @@ function [image] = CleanImages(image)
     image=double(rgb2gray(image));
     % figure, imshow(image, []); title('Original Image');
 
-    img=medfilt2(image);
+    image=medfilt2(image);
     % figure, imshow(img, []); title('Median Filtered Image');
 
-    img=imgaussfilt(image, 4, 'FilterSize', [5 5]);
+    image=imgaussfilt(image, 4, 'FilterSize', [5 5]);
     % figure, imshow(img, []); title('Gaussian Filtered Image');
 
     % Return image to rgb format
-    image=uint8(img);
+    image=uint8(image);
 
 end    
