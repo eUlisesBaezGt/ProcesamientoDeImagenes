@@ -1,5 +1,6 @@
 % ADAPTED Veysel AKSIN's Training_Data Model
 % https://github.com/veyselaksin/DriverPlateRecognition
+% Etiquetado de aprendizaje supervisado
 
 function [] = TrainModel()
     

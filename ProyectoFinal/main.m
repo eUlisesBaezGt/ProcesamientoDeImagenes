@@ -1,5 +1,5 @@
 % Identificar carros en fotos con ruido y limpiarlas para obtener info
-% sobre el color de auto y la placa.
+% sobre la placa.
 
 close all; clear; clc;
 
