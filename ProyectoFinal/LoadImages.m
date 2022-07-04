@@ -13,6 +13,7 @@ function [images] = LoadImages()
 
     % Get the name of the files
     file_names = {files.name};
+    images={};
 
     % Asign images to variables
     for i = 1:num_files
@@ -30,6 +31,5 @@ function [images] = LoadImages()
 
         % Add the image name to the list of images
         images{i} = file_name;
-
     end
 end

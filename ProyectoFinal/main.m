@@ -15,14 +15,10 @@ images = LoadImages;
 
 images = CleanImages(images);
 
-%% 4) OBTAIN COLOR
-% Change RGB to color and get the predominant color of the center
-colors = GetColors(images);
-
-%% 5) OBTAIN LICENSE PLATE
-% Search for license plate in the image with OCR
+%% 4) OBTAIN LICENSE PLATE
+% % Search for license plate in the image with OCR
 plates = GetPlates(images);
 
-%% 6) CREATE A NEW IMAGE WITH THE INFORMATION IN EACH CORNER
-% Overlap a text box in the lower left corner with the information
-% Save the new image in a results folder
+% %% 5) CREATE A NEW IMAGE WITH THE INFORMATION IN LOW CORNER
+% % Overlap a text box in the lower left corner with the information
+% % Save the new image in a results folder

@@ -1,7 +1,7 @@
 % Create the function CleanImages which receives a cell array of images and cleans and saves the images in a new folder.
 function [images] = CleanImages(images)
     % Create a new folder to save the images.
-    folder = 'CleanedImages';
+    folder = './CleanedImages/';
     if ~exist(folder, 'dir')
         mkdir(folder);
     end

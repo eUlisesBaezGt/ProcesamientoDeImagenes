@@ -1,6 +1,6 @@
 function [] = AddingNoise()
     % Create new Folder
-    new_folder = 'Images';
+    new_folder = './Images/';
     if ~exist(new_folder, 'dir')
         mkdir(new_folder);
     end
@@ -12,6 +12,7 @@ function [] = AddingNoise()
     files = files(~[files.isdir]); % Delete all files that are not images
 
     num_files = length(files); % Get the number of files in the folder
+
     file_names = {files.name}; % Get the name of the files
 
     for i = 1:num_files
