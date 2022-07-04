@@ -3,7 +3,7 @@
 
 close all; clear; clc;
 
-%% 1) Dirty images, add noise and blur
+%% 1) DIRTY IMAGES WITH NOISE AND BLUR
 
 AddingNoise;
 
@@ -19,6 +19,12 @@ images = CleanImages(images);
 % % Search for license plate in the image with OCR
 plates = GetPlates(images);
 
-% %% 5) CREATE A NEW IMAGE WITH THE INFORMATION IN LOW CORNER
-% % Overlap a text box in the lower left corner with the information
-% % Save the new image in a results folder
+%% 5) SHOW RESULTS IN CONSOLE AND SAVE TO FILE
+for i = 1:length(plates)
+    % Show in console
+    fprintf('%s\n', plates{i});
+    % Save to file results.txt
+    fid = fopen('results.txt', 'a');
+    fprintf(fid, '%s\n', plates{i});
+    fclose(fid);
+end
