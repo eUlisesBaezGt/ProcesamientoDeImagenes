@@ -15,7 +15,7 @@ H = imHSV(:,:,1)*360;
 S = imHSV(:,:,2);
 V = imHSV(:,:,3);
 
-Hmin = 60; Hmax = 100; 
+Hmin = 0; Hmax = 100; 
 Smin = 0.1; Smax = 1;
 Vmin = 0.1; Vmax = 1;
 
