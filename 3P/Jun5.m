@@ -1,41 +1,35 @@
-%Color segmentation using HSV 
-clc;
-clearvars; close all;
+%Color segmentation using LAB 
+clc; clearvars; close all;
 
-im= imread('up.png');
-imHSV=rgb2hsv(im);
-figure(); imshow(im);  title('Original image');
-figure(); imshow(imHSV);  title('HSV image');
+%%
+img=imread('up.png');
+LABimg=rgb2lab(img);
+figure(); imshow(img);  title('Original image');
+figure(); imshow(LABimg);  title('LAB image');
 
 sigma = 5;
-imHSV = imgaussfilt(imHSV, sigma, 'FilterSize', 3);
-figure(); imshow(imHSV);  title('HSV image filtrada');
+LABimg = imgaussfilt(LABimg, sigma, 'FilterSize', 3);
+figure(); imshow(LABimg);  title('LAB image filtrada');
 
-H = imHSV(:,:,1)*360;
-S = imHSV(:,:,2);
-V = imHSV(:,:,3);
+L = LABimg(:,:,1);
+A = LABimg(:,:,2);
+B = LABimg(:,:,3);
 
-Hmin = 60; Hmax = 100; 
-Smin = 0.1; Smax = 1;
-Vmin = 0.1; Vmax = 1;
+Vmin = 1; Hmax = 100; 
+Smin = -30; Smax = 87;
+Vmin = 50; Vmax = 128;
 
 maskSV  = (S >= Smin) & (S <= Smax)&(V >= Vmin)&(V <= Vmax);
-figure(); imshow(maskSV); title('Mask SV (Segmentación)'); 
+figure(); imshow(maskSV); title('Mask 1 (Segmentación)'); 
 
-mask = ((H > Hmin) & (H <= Hmax)) & (maskSV == 1);
+mask = ((H > Vmin) & (H <= Hmax)) & (maskSV == 1);
 mask3Ch = cat(3, mask, mask, mask);
-figure(); imshow(mask); title('Mask H (Segmentación)'); 
+figure(); imshow(mask); title('Mask 2 (Segmentación)'); 
 %mask3Ch = cat(3, maskSV, maskSV, maskSV); %White color segmentation
 
-colorFilter = im;
+colorFilter = img;
 colorFilter(mask3Ch == 0) = 0; %colorFilter(mask3Ch ~= 0) = 0; %White color segmentation
 figure(); imshow(colorFilter); title('Color Mask (Segmentación)'); 
-
-
-
-
-
-
 
 
 %     

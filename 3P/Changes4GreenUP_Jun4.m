@@ -32,12 +32,6 @@ colorFilter(mask3Ch == 0) = 0; %colorFilter(mask3Ch ~= 0) = 0; %White color segm
 figure(); imshow(colorFilter); title('Color Mask (Segmentación)'); 
 
 
-
-
-
-
-
-
 %     
 %     black = (valI<vThresh(1));
 %     white = (satI<sThresh(1))&(valI>=vThresh(1));
