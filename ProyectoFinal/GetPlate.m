@@ -20,7 +20,7 @@ function [plate] = GetPlate(image)
     reverse=imcomplement(image);
     % figure, imshow(reverse), title('Black and White Reversed Image');
 
-    %% Remove Last Noise
+    %% Remove Small Objects
     % bwareaopen don't need non-chracter object
     if w> 2000
         temp=bwareaopen(reverse,3500);
