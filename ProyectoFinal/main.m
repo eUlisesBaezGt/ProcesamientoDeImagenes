@@ -1,5 +1,5 @@
-% Identificar carros en fotos con ruido y limpiarlas para obtener info
-% sobre la placa.
+% Usando fotos de placas de autos con ruido y desenfoque, limpiarlas para
+% obtener la información de la placa como un texto.
 
 close all; clear; clc;
 
@@ -16,15 +16,7 @@ images = LoadImages;
 images = CleanImages(images);
 
 %% 4) OBTAIN LICENSE PLATE
-% % Search for license plate in the image with OCR
 plates = GetPlates(images);
 
 %% 5) SHOW RESULTS IN CONSOLE AND SAVE TO FILE
-for i = 1:length(plates)
-    % Show in console
-    fprintf('%s\n', plates{i});
-    % Save to file results.txt
-    fid = fopen('results.txt', 'a');
-    fprintf(fid, '%s\n', plates{i});
-    fclose(fid);
-end
+SavePlates(plates);
