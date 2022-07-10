@@ -37,7 +37,7 @@ function [plate] = GetPlate(image)
     % figure, imshow(temp2), title('Extracted Image from Cleaned Image'); % Extracted image
 
     %% Tag letters with object tag
-    % We are tagging each object with reionprops function
+    % We are tagging each object with regionprops function
     [lbls, objs]=bwlabel(temp2);
     objfts=regionprops(lbls,'BoundingBox');
 
