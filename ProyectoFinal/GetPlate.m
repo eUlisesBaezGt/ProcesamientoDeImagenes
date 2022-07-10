@@ -66,7 +66,7 @@ function [plate] = GetPlate(image)
         % pause(0.5); % show characters every 0.5 second
         
         x=[];
-        % Find number of character
+        % Find number of characters
         charnum=size(images,2);
         % We make comparisons and obtain correlation values.
         for k=1: charnum
