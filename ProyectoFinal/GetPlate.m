@@ -74,8 +74,8 @@ function [plate] = GetPlate(image)
             x=[x y];
         end  
         t=[t max(x)];
-        % We delete characters with correlation values below 0.37
-
+        
+        % We delete characters with correlation values below 0.388
         if max(x)> 0.388
             % We look at which character it matches and print that character
             maxIndex=find(x==max(x));
