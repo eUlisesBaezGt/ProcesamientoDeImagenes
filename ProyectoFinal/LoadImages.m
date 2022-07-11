@@ -9,5 +9,5 @@ function [images] = LoadImages()
     files = files(~[files.isdir]);
 
     % Get the name of the files
-    file_names = {files.name};
+    images = {files.name};
 end
