@@ -61,7 +61,7 @@ function [plate] = GetPlate(image)
         [r,c]=find(lbls==n);
         char=reverse(min(r):max(r), min(c):max(c)); % keep to image max and min values for readed all char
         char=imresize(char,[42,24]);
-        % figure, imshow(char), title('Character'); % we are showing keeped all character
+        figure, imshow(char), title('Character'); % we are showing keeped all character
         
         % pause(0.5); % show characters every 0.5 second
         
