@@ -9,16 +9,16 @@ function [plate] = GetPlate(image)
 
     image=imresize(image, [300,500]); % the image we receive is resized
 
-    % figure, imshow(image), title('Original Image');
+    %figure, imshow(image), title('Original Image');
 
     %% DET grey level
 
     threshold=graythresh(image);
     image=imbinarize(image, threshold);
-    % figure, imshow(image), title('Black and White Image'); 
+    % figure(), imshow(image), title('Black and White Image'); 
 
     reverse=imcomplement(image);
-    % figure, imshow(reverse), title('Black and White Reversed Image');
+    figure, imshow(reverse), title('Black and White Reversed Image');
 
     %% Remove Small Objects
     % bwareaopen don't need non-chracter object
